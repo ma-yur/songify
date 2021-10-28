@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
+import SongMenu from "./SongMenu";
+import { deleteSong } from "../apis/songsApi";
+
 export class Song extends Component {
+	handleClick = () => {
+		deleteSong(this.props.song.id);
+		this.props.deleteSong(this.props.song.id);
+	};
+
 	render() {
 		const { song, artist, year } = this.props.song;
 		return (
@@ -15,9 +23,13 @@ export class Song extends Component {
 							{year}
 						</p>
 					</div>
-					<button className="text-3xl">...</button>
+					<button className="">
+						<SongMenu
+							onClick={this.handleClick}
+							playlists={this.props.playlists}
+						/>
+					</button>
 				</div>
-				<div></div>
 				<hr className="my-6 dark:border-gray-800 opacity-50 " />
 			</div>
 		);

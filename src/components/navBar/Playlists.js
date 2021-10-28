@@ -7,6 +7,7 @@ export class Playlists extends Component {
 	fetchPlaylists = async () => {
 		let playlists = await getPlaylists();
 		this.setState({ playlists: playlists });
+		this.props.playlists(this.state.playlists);
 	};
 	componentDidMount() {
 		this.fetchPlaylists();

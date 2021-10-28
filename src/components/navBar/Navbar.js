@@ -3,6 +3,10 @@ import AllSongs from "./AllSongs";
 import Playlists from "./Playlists";
 
 export class Navbar extends Component {
+	playlists = (playlists) => {
+		this.props.playlists(playlists);
+	};
+
 	render() {
 		return (
 			<div
@@ -25,7 +29,7 @@ export class Navbar extends Component {
 					<nav>
 						<AllSongs />
 						<hr className="my-6 dark:border-gray-600" />
-						<Playlists />
+						<Playlists playlists={this.playlists} />
 					</nav>
 				</div>
 			</div>
