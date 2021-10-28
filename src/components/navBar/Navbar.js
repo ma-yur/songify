@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AllSongs from "./AllSongs";
 import Playlists from "./Playlists";
+import AddPlaylists from "./AddPlaylists";
 
 export class Navbar extends Component {
 	playlists = (playlists) => {
@@ -16,9 +17,8 @@ export class Navbar extends Component {
     h-screen
     px-4
     py-8
-    bg-white
-    border-r
-    dark:bg-gray-800 dark:border-gray-600
+		backdrop-filter backdrop-blur-sm bg-gray-300 
+		bg-opacity-25
   "
 			>
 				<h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
@@ -30,6 +30,7 @@ export class Navbar extends Component {
 						<AllSongs />
 						<hr className="my-6 dark:border-gray-600" />
 						<Playlists playlists={this.playlists} />
+						<AddPlaylists />
 					</nav>
 				</div>
 			</div>

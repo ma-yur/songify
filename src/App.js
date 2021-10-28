@@ -11,7 +11,12 @@ export class App extends Component {
 	};
 	render() {
 		return (
-			<div className="flex">
+			<div
+				style={{
+					background: "linear-gradient(to right, #8e9eab, #eef2f3)",
+				}}
+				className="flex bg-green-50"
+			>
 				<Navbar playlists={this.playlists} />
 				<Switch>
 					<Route

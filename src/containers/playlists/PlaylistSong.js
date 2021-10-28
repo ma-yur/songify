@@ -11,9 +11,25 @@ export class PlaylistSong extends Component {
 				<div className="p-1 ">
 					<div className="flex justify-between items-center px-4">
 						<div>
-							<p className="font-semibold text-2xl tracking-wider text-gray-900 ">
-								{song}
-							</p>
+							<div className="flex gap-2 items-center">
+								<svg
+									class="w-6 h-6"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+									></path>
+								</svg>
+								<p className="font-semibold text-2xl tracking-wider text-gray-900 ">
+									{song}
+								</p>
+							</div>
 							<p className="text-black-900 italic font-light">- {artist}</p>
 						</div>
 						<div>

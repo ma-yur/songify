@@ -30,11 +30,8 @@ export class AllSongs extends Component {
 	render() {
 		return (
 			<div
-				style={{
-					background:
-						"url('https://images.unsplash.com/photo-1487215078519-e21cc028cb29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') center",
-				}}
-				className=" bg-gradient-to-r from-blue-400 to-sky-300  w-full min-h-screen h-full"
+			
+				className="w-full min-h-screen h-full"
 			>
 				<div className="font-bold container mx-auto p-10 m-8 bg-gray-100 backdrop-filter backdrop-blur-sm w-3/2 rounded-xl h-screen   bg-opacity-40 ">
 					{this.renderSongs()}

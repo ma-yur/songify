@@ -18,4 +18,4 @@ const getPlaylist = (id) => {
 		.then((data) => data)
 		.catch((err) => console.error(err));
 };
-export { getPlaylists, getPlaylist };
+export { getPlaylists,getPlaylist };
