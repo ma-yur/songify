@@ -10,7 +10,13 @@ function App() {
 			<Navbar />
 			<Switch>
 				<Route exact path="/songs" component={() => <AllSongs />} />
-				<PlaylistSongs />
+				<Route
+					exact
+					path="/playlist/:id"
+					component={(routeProps) => (
+						<PlaylistSongs key={routeProps.match.params.id} playlistId={routeProps.match.params.id} />
+					)}
+				/>
 			</Switch>
 		</div>
 	);

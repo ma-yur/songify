@@ -14,7 +14,7 @@ export class Playlists extends Component {
 	renderPlayLists = () => {
 		return this.state.playlists.map((playlist) => {
 			return (
-				<Playlist key={Playlist.id} id={playlist.id} name={playlist.name} />
+				<Playlist key={playlist.id} id={playlist.id} name={playlist.name} />
 			);
 		});
 	};

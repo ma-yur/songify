@@ -6,7 +6,7 @@ export class Navbar extends Component {
 	render() {
 		return (
 			<div
-				class="
+				className="
     flex flex-col
     w-64
     h-screen
@@ -17,14 +17,14 @@ export class Navbar extends Component {
     dark:bg-gray-800 dark:border-gray-600
   "
 			>
-				<h2 class="text-3xl font-semibold text-gray-800 dark:text-white">
+				<h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
 					Songify
 				</h2>
 
-				<div class="flex flex-col justify-between flex-1 mt-6">
+				<div className="flex flex-col justify-between flex-1 mt-6">
 					<nav>
 						<AllSongs />
-						<hr class="my-6 dark:border-gray-600" />
+						<hr className="my-6 dark:border-gray-600" />
 						<Playlists />
 					</nav>
 				</div>
