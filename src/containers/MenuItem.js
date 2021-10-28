@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+import { addSongToPlaylist } from "../apis/songsApi";
 
 export class MenuItem extends Component {
-	handleClick = () => {};
+	handleClick = () => {
+		console.log("clecled");
+		addSongToPlaylist(this.props.playlist.id, this.props.songId);
+	};
 	render() {
 		return (
-			<div className="flex items-center justify-between ">
+			<div className="text-gray-700 text-lg flex items-center justify-between ">
 				<p>{this.props.playlist.name}</p>
-				<p onClick={this.handleClick}>+</p>
+				<p className="cursor-pointer" onClick={this.handleClick}>
+					+
+				</p>
 			</div>
 		);
 	}

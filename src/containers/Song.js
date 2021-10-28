@@ -4,6 +4,7 @@ import SongMenu from "./SongMenu";
 import { deleteSong } from "../apis/songsApi";
 
 export class Song extends Component {
+	state = { openMenu: false };
 	handleClick = () => {
 		deleteSong(this.props.song.id);
 		this.props.deleteSong(this.props.song.id);
@@ -23,12 +24,21 @@ export class Song extends Component {
 							{year}
 						</p>
 					</div>
-					<button className="">
-						<SongMenu
-							onClick={this.handleClick}
-							playlists={this.props.playlists}
-						/>
-					</button>
+					<div>
+						{this.state.openMenu && (
+							<SongMenu
+								onClick={this.handleClick}
+								playlists={this.props.playlists}
+								songId={this.props.song.id}
+							/>
+						)}
+						<div
+							className="text-3xl"
+							onClick={() => this.setState({ openMenu: !this.state.openMenu })}
+						>
+							{this.state.openMenu ? <button>x</button> : <button>...</button>}
+						</div>
+					</div>
 				</div>
 				<hr className="my-6 dark:border-gray-800 opacity-50 " />
 			</div>
