@@ -3,7 +3,6 @@ import { addSongToPlaylist } from "../apis/songsApi";
 
 export class MenuItem extends Component {
 	handleClick = () => {
-		console.log("clecled");
 		addSongToPlaylist(this.props.playlist.id, this.props.songId);
 	};
 	render() {

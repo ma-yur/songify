@@ -2,7 +2,7 @@ import { Route, Switch } from "react-router";
 import React, { Component } from "react";
 import Navbar from "./components/navBar/Navbar";
 import AllSongs from "./containers/AllSongs";
-import PlaylistSongs from "./PlaylistSongs";
+import PlaylistSongs from "./containers/playlists";
 
 export class App extends Component {
 	state = { playlists: [] };

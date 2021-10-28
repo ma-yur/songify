@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { getPlaylist } from "./apis/PlaylistsApi";
-import Song from "./containers/Song";
+import { getPlaylist } from "../../apis/PlaylistsApi";
+import PlaylistSong from "./PlaylistSong";
 
 export class PlaylistSongs extends Component {
 	state = { playlist: {} };
@@ -8,14 +8,38 @@ export class PlaylistSongs extends Component {
 		let playlist = await getPlaylist(this.props.playlistId);
 		this.setState({ playlist: playlist });
 	};
-	renderSongs = () => {
-		return this.state.playlist.songs.map((song) => {
-			return <Song key={song.id} song={song} />;
-		});
-	};
 
 	componentDidMount = () => {
 		this.fetchPlaylists();
+	};
+
+	renderSongs = () => {
+		return this.state.playlist.songs.map((song) => {
+			return (
+				<PlaylistSong
+					playlist={this.state.playlist}
+					key={song.id}
+					song={song}
+					handleRemoveSong={this.removeSong}
+				/>
+			);
+		});
+	};
+	removeSong = (songId) => {
+		this.setState(
+			{
+				playlist: {
+					...this.state.playlist,
+					songs: this.state.playlist.songs.filter((song) => {
+						console.log(song.id, songId);
+						return song.id !== songId;
+					}),
+				},
+			},
+			() => {
+				console.log(this.state.playlist);
+			}
+		);
 	};
 
 	render() {

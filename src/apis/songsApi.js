@@ -21,4 +21,12 @@ const addSongToPlaylist = (playlistId, songId) => {
 		}
 	).catch((err) => console.error(err));
 };
-export { getSongs, deleteSong, addSongToPlaylist };
+const removeSongFromPlaylist = (playlistId, songId) => {
+	fetch(
+		`https://frozen-meadow-48409.herokuapp.com/v1/song/${playlistId}/${songId}`,
+		{
+			method: "DELETE",
+		}
+	).catch((err) => console.error(err));
+};
+export { getSongs, deleteSong, addSongToPlaylist, removeSongFromPlaylist };
