@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { getPlaylists } from "../../apis/PlaylistsApi";
 import Playlist from "./Playlist";
+import AddToPlaylists from "../../containers/AddToPlaylists";
+import AddPlaylists from "./AddPlaylists";
 
 export class Playlists extends Component {
 	state = { playlists: [] };
@@ -12,6 +14,10 @@ export class Playlists extends Component {
 	componentDidMount() {
 		this.fetchPlaylists();
 	}
+
+	handleAddPlaylist = (playlist) => {
+		this.setState({ playlists: [...this.state.playlists, playlist] });
+	};
 	renderPlayLists = () => {
 		return this.state.playlists.map((playlist) => {
 			return (
@@ -25,22 +31,23 @@ export class Playlists extends Component {
 			<div>
 				<div className="flex items-center gap-2">
 					<svg
-						class="w-6 h-6"
+						className="w-6 h-6"
 						fill="none"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth="2"
 							d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
 						></path>
 					</svg>
 					<p className="text-xl font-bold">Your Playlists</p>
 				</div>
 				{this.renderPlayLists()}
+				<AddPlaylists addPlaylist={this.handleAddPlaylist} />
 			</div>
 		);
 	}

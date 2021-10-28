@@ -29,11 +29,8 @@ export class AllSongs extends Component {
 	};
 	render() {
 		return (
-			<div
-			
-				className="w-full min-h-screen h-full"
-			>
-				<div className="font-bold container mx-auto p-10 m-8 bg-gray-100 backdrop-filter backdrop-blur-sm w-3/2 rounded-xl h-screen   bg-opacity-40 ">
+			<div className=" min-w-3/4 mx-auto pt-7  ">
+				<div className="font-bold container mx-auto p-10 shadow-xl  bg-gray-100 backdrop-filter backdrop-blur-sm w-3/2 rounded-xl h-screen   bg-opacity-40 ">
 					{this.renderSongs()}
 				</div>
 			</div>
