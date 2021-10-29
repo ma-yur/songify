@@ -1,16 +1,27 @@
 import { Route, Switch } from "react-router";
 import React, { Component } from "react";
+import { getPlaylists } from "./apis/PlaylistsApi";
+
 import Navbar from "./components/navBar/Navbar";
 import AllSongs from "./containers/AllSongs";
 import PlaylistSongs from "./containers/playlists";
+import AddPlaylists from "./components/navBar/AddPlaylists";
 
 export class App extends Component {
 	state = { playlists: [], navBarOpen: true };
+
 	playlists = (playlists) => {
 		this.setState({ playlists: playlists });
 	};
-	componentDidMount =()=>{
-
+	fetchPlaylists = async () => {
+		let playlists = await getPlaylists();
+		this.setState({ playlists: playlists });
+	};
+	handleAddPlayList = (playlist) => {
+		this.setState({ playlists: [...this.state.playlists, playlist] });
+	};
+	componentDidMount() {
+		this.fetchPlaylists();
 	}
 	renderHamburger = () => {
 		return (
@@ -43,7 +54,8 @@ export class App extends Component {
 			>
 				{this.state.navBarOpen ? (
 					<Navbar
-						playlists={this.playlists}
+						addPlaylist={this.handleAddPlayList}
+						playlists={this.state.playlists}
 						handleClick={() =>
 							this.setState({ navBarOpen: !this.state.navBarOpen })
 						}

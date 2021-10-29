@@ -1,25 +1,13 @@
 import React, { Component } from "react";
-import { getPlaylists } from "../../apis/PlaylistsApi";
 import Playlist from "./Playlist";
-import AddToPlaylists from "../../containers/AddToPlaylists";
 import AddPlaylists from "./AddPlaylists";
 
 export class Playlists extends Component {
-	state = { playlists: [] };
-	fetchPlaylists = async () => {
-		let playlists = await getPlaylists();
-		this.setState({ playlists: playlists });
-		this.props.playlists(this.state.playlists);
-	};
-	componentDidMount() {
-		this.fetchPlaylists();
-	}
-
-	handleAddPlaylist = (playlist) => {
-		this.setState({ playlists: [...this.state.playlists, playlist] });
-	};
+	// handleAddPlaylist = (playlist) => {
+	// 	this.setState({ playlists: [...this.state.playlists, playlist] });
+	// };
 	renderPlayLists = () => {
-		return this.state.playlists.map((playlist) => {
+		return this.props.playlists.map((playlist) => {
 			return (
 				<Playlist key={playlist.id} id={playlist.id} name={playlist.name} />
 			);
@@ -46,8 +34,10 @@ export class Playlists extends Component {
 					</svg>
 					<p className="text-xl font-bold">Your Playlists</p>
 				</div>
-				{this.renderPlayLists()}
-				<AddPlaylists addPlaylist={this.handleAddPlaylist} />
+				<div className="overflow-auto h-96 ">{this.renderPlayLists()}</div>
+				<AddPlaylists
+					addPlaylist={(playlist) => this.props.handleAddPlaylist(playlist)}
+				/>
 			</div>
 		);
 	}

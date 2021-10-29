@@ -4,6 +4,7 @@ import { createPlaylist } from "../../apis/PlaylistsApi";
 
 export class AddPlaylists extends Component {
 	state = { input: "" };
+	
 	handleSubmit = (e) => {
 		e.preventDefault();
 		let data = { name: this.state.input };
@@ -12,6 +13,7 @@ export class AddPlaylists extends Component {
 		});
 		this.setState({ input: "" });
 	};
+
 	render() {
 		return (
 			<div>
