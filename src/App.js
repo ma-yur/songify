@@ -1,11 +1,11 @@
 import { Route, Switch } from "react-router";
 import React, { Component } from "react";
-import { getPlaylists } from "./apis/PlaylistsApi";
 
+import { getPlaylists } from "./apis/PlaylistsApi";
 import Navbar from "./components/navBar/Navbar";
 import AllSongs from "./containers/AllSongs";
 import PlaylistSongs from "./containers/playlists";
-import AddPlaylists from "./components/navBar/AddPlaylists";
+import NewSong from "./containers/newSong";
 
 export class App extends Component {
 	state = { playlists: [], navBarOpen: true };
@@ -30,15 +30,15 @@ export class App extends Component {
 				onClick={() => this.setState({ navBarOpen: !this.state.navBarOpen })}
 			>
 				<svg
-					class="w-20 h-12"
+					className="w-20 h-12"
 					fill="currentColor"
 					viewBox="0 0 20 20"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
-						fill-rule="evenodd"
+						fillRule="evenodd"
 						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-						clip-rule="evenodd"
+						clipRule="evenodd"
 					></path>
 				</svg>
 			</div>
@@ -49,8 +49,9 @@ export class App extends Component {
 			<div
 				style={{
 					background: "linear-gradient(to right, #67b26f, #4ca2cd)",
+					opacity :"0.9"
 				}}
-				className="flex bg-green-50"
+				className="flex"
 			>
 				{this.state.navBarOpen ? (
 					<Navbar
@@ -79,6 +80,7 @@ export class App extends Component {
 							/>
 						)}
 					/>
+					<Route exact path="/newsong" component={() => <NewSong />} />
 				</Switch>
 			</div>
 		);

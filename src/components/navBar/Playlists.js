@@ -34,7 +34,7 @@ export class Playlists extends Component {
 					</svg>
 					<p className="text-xl font-bold">Your Playlists</p>
 				</div>
-				<div className="  w-full rounded-lg my-7 p-3 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-green-600 scrollbar-track-green-200 h-96 ">
+				<div className="  w-full rounded-lg my-7 p-3 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-black scrollbar-track-green-200 h-96 ">
 					{this.renderPlayLists()}
 				</div>
 				<AddPlaylists

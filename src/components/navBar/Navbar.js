@@ -1,40 +1,38 @@
 import React, { Component } from "react";
-import AllSongs from "./AllSongs";
+
+import YourSongs from "./YourSongs";
+import AddSong from "./AddSong";
 import Playlists from "./Playlists";
 
 export class Navbar extends Component {
-	// playlists = (playlists) => {
-	// 	this.props.playlists(playlists);
-	// };
-
 	render() {
 		return (
 			<div
 				className="
-    flex flex-col
-    w-64
-    h-screen
-    px-4
-    py-8
-		backdrop-filter backdrop-blur-2xl bg-gray-300 
-		bg-opacity-20
-		shadow-xl
-  "
+					flex flex-col
+					w-64
+					h-screen
+					px-4
+					py-8
+					backdrop-filter backdrop-blur-2xl bg-gray-300 
+					bg-opacity-20
+					shadow-xl
+				"
 			>
 				<div
 					onClick={this.props.handleClick}
 					className=" cursor-pointer absolute top-3 right-6"
 				>
 					<svg
-						class="w-9 h-9"
+						className="w-9 h-9"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							fill-rule="evenodd"
+							fillRule="evenodd"
 							d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
-							clip-rule="evenodd"
+							clipRule="evenodd"
 						></path>
 					</svg>
 				</div>
@@ -53,7 +51,8 @@ export class Navbar extends Component {
 
 				<div className="flex flex-col justify-between flex-1 mt-6">
 					<nav>
-						<AllSongs />
+						<YourSongs />
+						<AddSong />
 						<hr className="my-6 dark:border-gray-600" />
 						<Playlists
 							playlists={this.props.playlists}

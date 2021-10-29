@@ -19,7 +19,7 @@ export class AddPlaylists extends Component {
 			<div>
 				<form className="flex-col space-y-2" onSubmit={this.handleSubmit} action="">
 					<input
-						className="block w-5/6 rounded-lg px-2 py-1"
+						className="block w-5/6 rounded-lg px-2 py-1 focus:outline-none focus:shadow-outline"
 						value={this.state.input}
 						onChange={(e) => {
 							this.setState({ input: e.target.value });
