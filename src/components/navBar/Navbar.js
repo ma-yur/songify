@@ -91,8 +91,7 @@ export class Navbar extends Component {
 						<div className="flex flex-col justify-between flex-1 mt-6">
 							<nav>
 								<YourSongs />
-								<AddSong />
-								<hr className="my-6 dark:border-gray-600" />
+								<hr className="my-6 border-gray-600" />
 								<Playlists
 									playlists={this.props.playlists}
 									handleAddPlaylist={(playlist) =>

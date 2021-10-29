@@ -1,17 +1,32 @@
 import React, { Component } from "react";
 
+import { editSong } from "../apis/songsApi";
+
 import SongMenu from "./SongMenu";
 import { deleteSong } from "../apis/songsApi";
 
 export class Song extends Component {
-	state = { openMenu: false };
+	state = {
+		openMenu: false,
+		song: this.props.song.song,
+		artist: this.props.song.artist,
+		year: this.props.song.year,
+	};
 	handleClick = () => {
 		deleteSong(this.props.song.id);
 		this.props.deleteSong(this.props.song.id);
 	};
+	handleSubmit = (e) => {
+		e.preventDefault();
+		let data = {
+			song: this.state.song,
+			artist: this.state.artist,
+			year: this.state.year,
+		};
+		editSong(this.props.song.id, data);
+	};
 
 	render() {
-		const { song, artist, year } = this.props.song;
 		return (
 			<div className="p-1 ">
 				<div className="flex justify-between items-center px-4">
@@ -26,13 +41,35 @@ export class Song extends Component {
 							<path d="M20 3v14a4 4 0 1 1-2-3.465V6H9v11a4 4 0 1 1-2-3.465V3h13z" />
 						</svg>
 						<div>
-							<p className="font-semibold text-2xl tracking-wider text-gray-900 ">
-								{song}
-							</p>
-							<p className="text-black-900 italic font-light">- {artist}</p>
-							<p className="text-gray-800 px-2 font-light text-sm font-serif">
-								{year}
-							</p>
+							<div>
+								<form onSubmit={this.handleSubmit}>
+									<input
+										type="text"
+										value={this.state.song}
+										onChange={(e) => {
+											this.setState({ song: e.target.value });
+										}}
+										className="font-semibold text-2xl tracking-wider text-gray-900  px-2 focus:outline-none focus:shadow-outline bg-transparent"
+									/>
+									<input
+										type="text"
+										value={this.state.artist}
+										onChange={(e) => {
+											this.setState({ artist: e.target.value });
+										}}
+										className=" block text-black-900 italic font-light focus:outline-none focus:shadow-outline bg-transparent"
+									/>
+									<input
+										type="text"
+										value={this.state.year}
+										onChange={(e) => {
+											this.setState({ year: e.target.value });
+										}}
+										className="text-gray-800 px-2 font-light text-sm font-serif focus:outline-none focus:shadow-outline bg-transparent "
+									/>
+									<button></button>
+								</form>
+							</div>
 						</div>
 					</div>
 					<div>
