@@ -27,6 +27,7 @@ export class AllSongs extends Component {
 	componentDidMount = () => {
 		this.fetchSongs();
 	};
+
 	render() {
 		return (
 			<div className=" min-w-3/4 mx-auto pt-7  ">
