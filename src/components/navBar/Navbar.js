@@ -16,8 +16,9 @@ export class Navbar extends Component {
     h-screen
     px-4
     py-8
-		backdrop-filter backdrop-blur-sm bg-white 
-		bg-opacity-30
+		backdrop-filter backdrop-blur-2xl bg-gray-300 
+		bg-opacity-20
+		shadow-xl
   "
 			>
 				<div

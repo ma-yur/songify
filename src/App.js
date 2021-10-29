@@ -5,10 +5,13 @@ import AllSongs from "./containers/AllSongs";
 import PlaylistSongs from "./containers/playlists";
 
 export class App extends Component {
-	state = { playlists: [], navBarOpen: false };
+	state = { playlists: [], navBarOpen: true };
 	playlists = (playlists) => {
 		this.setState({ playlists: playlists });
 	};
+	componentDidMount =()=>{
+
+	}
 	renderHamburger = () => {
 		return (
 			<div
