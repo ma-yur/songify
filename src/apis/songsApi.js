@@ -8,6 +8,20 @@ const getSongs = () => {
 		.then((data) => data)
 		.catch((err) => console.error(err));
 };
+const addSong = (data) => {
+	return fetch(`https://frozen-meadow-48409.herokuapp.com/v1/songs/`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+	})
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => data)
+		.catch((err) => console.error(err));
+};
 const deleteSong = (id) => {
 	fetch(`https://frozen-meadow-48409.herokuapp.com/v1/songs/${id}`, {
 		method: "DELETE",
@@ -29,4 +43,10 @@ const removeSongFromPlaylist = (playlistId, songId) => {
 		}
 	).catch((err) => console.error(err));
 };
-export { getSongs, deleteSong, addSongToPlaylist, removeSongFromPlaylist };
+export {
+	getSongs,
+	deleteSong,
+	addSongToPlaylist,
+	removeSongFromPlaylist,
+	addSong,
+};

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { addSong } from "../../apis/songsApi";
+
 export class index extends Component {
 	state = { song: "", artist: "", year: "" };
 	handleInputChange = (event) => {
@@ -17,7 +19,12 @@ export class index extends Component {
 			artist: this.state.artist,
 			year: this.state.year,
 		};
-		console.log(data);
+		addSong(data);
+		this.setState({
+			song: "",
+			artist: "",
+			year: "",
+		});
 	};
 
 	render() {
@@ -44,6 +51,7 @@ export class index extends Component {
 							value={this.state.song}
 							onChange={this.handleInputChange}
 							placeholder="Enter song name..."
+							required="required"
 						/>
 					</div>
 					<div className="mb-4">
@@ -57,6 +65,7 @@ export class index extends Component {
 							value={this.state.artist}
 							onChange={this.handleInputChange}
 							placeholder="Enter Artist name..."
+							required="required"
 						/>
 					</div>
 					<div className="mb-4">
@@ -70,6 +79,7 @@ export class index extends Component {
 							value={this.state.year}
 							onChange={this.handleInputChange}
 							placeholder="Enter release year..."
+							required="required"
 						/>
 					</div>
 					<button className="bg-blue-500 py-2 px-5 text-blue-100 rounded-lg  ">
