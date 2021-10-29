@@ -27,8 +27,22 @@ export class App extends Component {
 			}),
 		});
 	};
+	handleUpdatePlayList = (id, Playlist) => {
+		this.setState({
+			playlists: this.state.playlists.map((playlist) => {
+				if (playlist.id === id) {
+					playlist.name = Playlist;
+					return playlist;
+				}
+				return playlist;
+			}),
+		});
+	};
 	componentDidMount() {
 		this.fetchPlaylists();
+	}
+	componentDidUpdate() {
+		// this.fetchPlaylists();
 	}
 
 	render() {
@@ -43,13 +57,14 @@ export class App extends Component {
 					<Navbar
 						addPlaylist={this.handleAddPlayList}
 						removePlaylist={this.handleRemovePlayList}
+						updatePlaylist={this.handleUpdatePlayList}
 						playlists={this.state.playlists}
 					/>
 
 					<Switch>
 						<Route
 							exact
-							path="/songs"
+							path="/"
 							component={() => <AllSongs playlists={this.state.playlists} />}
 						/>
 						<Route

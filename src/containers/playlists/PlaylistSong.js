@@ -4,6 +4,10 @@ import PlaylistMenu from "./PlaylistMenu";
 export class PlaylistSong extends Component {
 	state = { openMenu: false };
 
+	componentDidUpdate() {
+		// return true
+	}
+
 	render() {
 		const { song, artist } = this.props.song;
 		return (

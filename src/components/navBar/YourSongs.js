@@ -5,7 +5,7 @@ export class AllSongs extends Component {
 	render() {
 		return (
 			<Link
-				to="/songs"
+				to="/"
 				className="
           flex
           items-center

@@ -12,6 +12,9 @@ export class PlaylistSongs extends Component {
 	componentDidMount = () => {
 		this.fetchPlaylists();
 	};
+	shouldComponentUpdate=()=>{
+		return true
+	}
 
 	renderSongs = () => {
 		return this.state.playlist.songs.map((song) => {

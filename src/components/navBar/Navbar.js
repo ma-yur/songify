@@ -100,6 +100,9 @@ export class Navbar extends Component {
 									handleRemovePlaylist={(playlist) =>
 										this.props.removePlaylist(playlist)
 									}
+									handleUpdatePlaylist={(id,playlist) =>
+										this.props.updatePlaylist(id,playlist)
+									}
 								/>
 							</nav>
 						</div>
