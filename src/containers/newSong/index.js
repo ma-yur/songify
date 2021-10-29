@@ -29,7 +29,7 @@ export class index extends Component {
 
 	render() {
 		return (
-			<div className="min-w-1/2 mx-auto pt-7 h-screen">
+			<div className="bg-opacity-0 right-1/3 absolute z-10 pt-7 h-screen">
 				<form
 					className="font-bold container mx-auto p-10 shadow-xl  
         bg-white backdrop-filter backdrop-blur-sm w-3/2 rounded-xl  

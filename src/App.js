@@ -33,37 +33,38 @@ export class App extends Component {
 
 	render() {
 		return (
-			<div
-				style={{
-					background: "linear-gradient(to right, #67b26f, #4ca2cd)",
-					opacity: "0.9",
-				}}
-				className="flex"
-			>
-				<Navbar
-					addPlaylist={this.handleAddPlayList}
-					removePlaylist={this.handleRemovePlayList}
-					playlists={this.state.playlists}
-				/>
+			<div>
+				<div
+					style={{
+						background: "linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)",
+					}}
+					className="flex bg-white bg-opacity-25 backdrop-filter backdrop-blur-sm "
+				>
+					<Navbar
+						addPlaylist={this.handleAddPlayList}
+						removePlaylist={this.handleRemovePlayList}
+						playlists={this.state.playlists}
+					/>
 
-				<Switch>
-					<Route
-						exact
-						path="/songs"
-						component={() => <AllSongs playlists={this.state.playlists} />}
-					/>
-					<Route
-						exact
-						path="/playlist/:id"
-						component={(routeProps) => (
-							<PlaylistSongs
-								key={routeProps.match.params.id}
-								playlistId={routeProps.match.params.id}
-							/>
-						)}
-					/>
-					<Route exact path="/newsong" component={() => <NewSong />} />
-				</Switch>
+					<Switch>
+						<Route
+							exact
+							path="/songs"
+							component={() => <AllSongs playlists={this.state.playlists} />}
+						/>
+						<Route
+							exact
+							path="/playlist/:id"
+							component={(routeProps) => (
+								<PlaylistSongs
+									key={routeProps.match.params.id}
+									playlistId={routeProps.match.params.id}
+								/>
+							)}
+						/>
+						<Route exact path="/newsong" component={() => <NewSong />} />
+					</Switch>
+				</div>
 			</div>
 		);
 	}

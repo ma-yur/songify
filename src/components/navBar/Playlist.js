@@ -8,7 +8,7 @@ export class Playlist extends Component {
 		event.stopPropagation();
 		event.preventDefault();
 		removePlaylist(this.props.id);
-		this.props.handleRemovePlaylist(this.props.id)
+		this.props.handleRemovePlaylist(this.props.id);
 	};
 
 	render() {
