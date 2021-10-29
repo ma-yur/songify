@@ -3,13 +3,17 @@ import Playlist from "./Playlist";
 import AddPlaylists from "./AddPlaylists";
 
 export class Playlists extends Component {
-	// handleAddPlaylist = (playlist) => {
-	// 	this.setState({ playlists: [...this.state.playlists, playlist] });
-	// };
 	renderPlayLists = () => {
 		return this.props.playlists.map((playlist) => {
 			return (
-				<Playlist key={playlist.id} id={playlist.id} name={playlist.name} />
+				<Playlist
+					handleRemovePlaylist={(playlist) =>
+						this.props.handleRemovePlaylist(playlist)
+					}
+					key={playlist.id}
+					id={playlist.id}
+					name={playlist.name}
+				/>
 			);
 		});
 	};

@@ -52,6 +52,7 @@ export class index extends Component {
 							onChange={this.handleInputChange}
 							placeholder="Enter song name..."
 							required="required"
+							autocomplete="off"
 						/>
 					</div>
 					<div className="mb-4">
@@ -66,6 +67,7 @@ export class index extends Component {
 							onChange={this.handleInputChange}
 							placeholder="Enter Artist name..."
 							required="required"
+							autocomplete="off"
 						/>
 					</div>
 					<div className="mb-4">
@@ -80,6 +82,7 @@ export class index extends Component {
 							onChange={this.handleInputChange}
 							placeholder="Enter release year..."
 							required="required"
+							autocomplete="off"
 						/>
 					</div>
 					<button className="bg-blue-500 py-2 px-5 text-blue-100 rounded-lg  ">

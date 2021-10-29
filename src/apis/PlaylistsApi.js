@@ -32,4 +32,14 @@ const createPlaylist = (data) => {
 		.then((data) => data)
 		.catch((err) => console.error(err));
 };
-export { getPlaylists, getPlaylist, createPlaylist };
+const removePlaylist = (id) => {
+	return fetch(`https://frozen-meadow-48409.herokuapp.com/v1/playlists/${id}`, {
+		method: "DELETE",
+	})
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => data)
+		.catch((err) => console.error(err));
+};
+export { getPlaylists, getPlaylist, createPlaylist, removePlaylist };

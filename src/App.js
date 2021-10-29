@@ -20,6 +20,13 @@ export class App extends Component {
 	handleAddPlayList = (playlist) => {
 		this.setState({ playlists: [...this.state.playlists, playlist] });
 	};
+	handleRemovePlayList = (playlistId) => {
+		this.setState({
+			playlists: this.state.playlists.filter((playlist) => {
+				return playlist.id !== playlistId;
+			}),
+		});
+	};
 	componentDidMount() {
 		this.fetchPlaylists();
 	}
@@ -35,6 +42,7 @@ export class App extends Component {
 			>
 				<Navbar
 					addPlaylist={this.handleAddPlayList}
+					removePlaylist={this.handleRemovePlayList}
 					playlists={this.state.playlists}
 				/>
 
