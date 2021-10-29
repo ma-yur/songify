@@ -21,7 +21,7 @@ export class Playlists extends Component {
 	render() {
 		return (
 			<div>
-				<div className="flex items-center gap-2">
+				<div className="flex items-center gap-2 pb-5">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -33,12 +33,14 @@ export class Playlists extends Component {
 					</svg>
 					<p className="text-xl font-bold">Your Playlists</p>
 				</div>
-				<div className="  w-full rounded-lg my-7 p-3 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-black scrollbar-track-green-200 h-96 ">
-					{this.renderPlayLists()}
-				</div>
+
 				<AddPlaylists
 					addPlaylist={(playlist) => this.props.handleAddPlaylist(playlist)}
 				/>
+				
+				<div className="  w-full rounded-lg p-3 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-black scrollbar-track-green-200 h-96 ">
+					{this.renderPlayLists()}
+				</div>
 			</div>
 		);
 	}
