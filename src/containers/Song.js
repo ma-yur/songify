@@ -84,7 +84,7 @@ export class Song extends Component {
 				<p className="font-semibold text-2xl tracking-wider text-gray-900  px-2">
 					{this.props.song.song}
 				</p>
-				<p className="block text-black-900 italic font-light">
+				<p className="block text-black-900 px-2 italic font-light">
 					{this.props.song.artist}
 				</p>
 				<p className="text-gray-800 block px-2 font-light text-sm font-serif">

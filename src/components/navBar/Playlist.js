@@ -18,6 +18,7 @@ export class Playlist extends Component {
 		editPlaylist(this.props.id, data).then(() => {
 			this.props.handleUpdatePlaylist(this.props.id, this.state.input);
 		});
+		this.setState({ isEditing: true });
 	};
 
 	renderForm = () => {

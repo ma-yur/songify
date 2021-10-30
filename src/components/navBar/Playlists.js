@@ -41,7 +41,7 @@ export class Playlists extends Component {
 					addPlaylist={(playlist) => this.props.handleAddPlaylist(playlist)}
 				/>
 
-				<div className="  w-full rounded-lg p-3 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-black scrollbar-track-green-200 h-96 ">
+				<div className="  w-full rounded-lg p-3 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-black scrollbar-track-pink-200 h-96 ">
 					{this.renderPlayLists()}
 				</div>
 			</div>

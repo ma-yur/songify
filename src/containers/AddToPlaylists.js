@@ -14,7 +14,9 @@ export class AddToPlaylists extends Component {
 		});
 	};
 	render() {
-		return <div>{this.props.playlists && this.renderPlaylists()}</div>;
+		return <div
+		className="h-20 scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-thumb-rounded-full  scrollbar-thumb-black scrollbar-track-red-200"
+		>{this.props.playlists && this.renderPlaylists()}</div>;
 	}
 }
 

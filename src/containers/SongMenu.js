@@ -8,7 +8,7 @@ export class SongMenu extends Component {
 				<div className="absolute right-20  mt-2 py-2 w-48 bg-white bg-opacity-70 rounded-md shadow-xl z-20">
 					<div
 						onClick={this.props.onClick}
-						className="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white"
+						className="block px-4 py-2 text-sm capitalize text-gray-700 hover:text-gray-500 cursor-pointer "
 					>
 						Delete
 					</div>
@@ -23,7 +23,7 @@ export class SongMenu extends Component {
 								onClick={() =>
 									this.setState({ addToPlaylist: !this.state.addToPlaylist })
 								}
-								className="cursor-pointer text-gray-500 text-lg" 
+								className="cursor-pointer text-gray-500 text-lg hover:text-gray-800" 
 							>
 								+ Add to playlist
 							</h1>
