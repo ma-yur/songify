@@ -15,8 +15,9 @@ export class Playlist extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		let data = { name: this.state.input };
-		editPlaylist(this.props.id, data);
-		this.props.handleUpdatePlaylist(this.props.id,this.state.input);
+		editPlaylist(this.props.id, data).then(() => {
+			this.props.handleUpdatePlaylist(this.props.id, this.state.input);
+		});
 	};
 
 	renderForm = () => {
