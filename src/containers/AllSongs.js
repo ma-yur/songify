@@ -17,6 +17,21 @@ export class AllSongs extends Component {
 	handleAddSong = (newSong) => {
 		this.setState({ songs: [newSong, ...this.state.songs] });
 	};
+	handleUpdateSong = (id, newSong) => {
+		this.setState({
+			songs: this.state.songs.map((song) => {
+				if (song.id === id) {
+					song.song = newSong.song;
+					song.artist = newSong.artist;
+					song.year = newSong.year;
+					console.log(song);
+					return song;
+				}
+				return song;
+			}),
+		});
+	};
+
 	renderSongs = () => {
 		return this.state.songs.map((song) => {
 			return (
@@ -24,6 +39,7 @@ export class AllSongs extends Component {
 					key={song.id}
 					song={song}
 					deleteSong={this.handleDelete}
+					updateSong={this.handleUpdateSong}
 					playlists={this.props.playlists}
 				/>
 			);
